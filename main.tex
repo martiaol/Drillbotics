@@ -1,0 +1,187 @@
+\documentclass[a4paper,english,12pt]{article}
+\usepackage[margin=1.2in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{graphicx}
+\usepackage[amssymb]{SIunits}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage[squares,numbers]{natbib}
+\usepackage{subcaption}
+\usepackage{parskip}
+\usepackage{color}
+\usepackage{inconsolata}
+\usepackage{xcolor}
+\usepackage{listingsutf8}
+\usepackage{pdfpages}
+\bibliographystyle{abbrvnat} 
+\usepackage[]{units}
+\usepackage{color}
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\usepackage{inconsolata}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{glossaries}
+\usepackage{nomencl}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{mcode} 
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{url}
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows,matrix,positioning}
+\usepackage{makecell}
+\newcommand\x{\times}
+\newcommand\y{\colorbox{mygreen}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tikz,amsmath}
+\newcommand\hlight[1]{\tikz[overlay, remember picture,baseline=-\the\dimexpr\fontdimen22\textfont2\relax]\node[rectangle,fill=blue!50,rounded corners,fill opacity = 0.2,draw,thick,text opacity =1] {$#1$};} 
+%\usepackage{gensymb}
+
+
+\author{Astrid Lescoeur, Martin Olsen, Mayo, Runa Egeland}
+\title{Drillbotics}
+\date{\today}
+
+\begin{document}
+\begin{titlepage}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/logontnu1.png}
+\end{figure}
+
+\vspace{2cm}
+
+
+\center 
+{\huge \bfseries Drillbotics - Report}\\[0.4cm]
+
+\Large \emph{}\\
+Astrid \textsc{Lescoeur}\\[0.5cm]
+Martin \textsc{Olsen}\\[0.5cm]
+Mayo \textsc{Mayo}\\[0.5cm]
+Runa \textsc{Egeland}\\[0.5cm]
+
+
+\textsc{\large Course: Party All Night Long }\\[0.5cm] % 
+
+\textsc{\large Supervisor: Sigve Hovda}\\[0.5cm]
+
+{\large \today}\\[0.5cm] 
+
+
+\begin{figure} [H]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/FrontPage.PNG}
+%\caption{rig}
+\label{fig:rig}
+\end{figure}
+
+
+% \vspace{2cm}
+% \begin{figure}[h]
+% \centering
+% \includegraphics[width = 12cm]{figures/Forside_gambrel_real.PNG}
+% \end{figure} 
+\vfill
+\end{titlepage}
+
+\clearpage
+
+\pagenumbering{Roman}
+
+\section*{Abstract}
+\input{sections/00.Abstract.tex}
+
+\newpage
+
+\section*{Team Bio}
+\input{sections/01.TeamBio.tex}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\pagenumbering{arabic}
+
+\newpage
+\section{Introduction}
+\label{sec:1}
+\input{sections/1.Introduction.tex}
+
+\newpage
+\section{Safety}
+\label{sec:2}
+\input{sections/2.Safety.tex}
+
+\newpage
+\section{Mechanical Design and Functionality}
+\label{sec:3}
+\input{sections/3.MechanicalDesignandFunctionality.tex}
+
+\newpage
+\section{Power Consumption Estimation}
+\label{sec:4}
+\input{sections/4.PowerSystemCalculations.tex}
+
+\newpage
+\section{Drill String Compression Analysis}
+\label{sec:5}
+\input{sections/5.DrillStringCompressionAnalysis.tex}
+
+
+\newpage
+\section{Drill String and Bit Dysfunctions}
+\label{sec:6}
+\input{sections/6.Drillstringandbitdysfunctions.tex}
+
+
+\newpage
+\section{Algorithm/Simulation/Model}
+\label{sec:7}
+\input{sections/7.AlgoSimMod.tex}
+
+
+\newpage
+\section{Control System}
+\label{sec:8}
+\input{sections/8.Controlsystem.tex}
+
+
+\newpage
+\section{Data Handling and Display}
+\label{sec:9}
+\input{sections/9.datahandling.tex}
+
+
+\newpage
+\section{Cost Estimate and Funding Plan}
+\label{sec:10}
+\input{sections/91.Cost.tex}
+
+\newpage
+\bibliography{biblio}
+
+\newpage
+\pagenumbering{Alph}
+\appendix
+\section*{Appendix}
+\input{sections/Appendix.tex}
+
+
+\end{document}

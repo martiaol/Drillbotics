@@ -1,0 +1,119 @@
+The power system consists of a top drive motor, a hoisting motor, a fluid pump and a computer for the control system. As stated in the guidelines, the total power consumption cannot exceed 18.64 kW. This means that the fatigue of the system components will be the limiting factor rather than the electric power available. However, the operation should be as energy efficient as possible and the expected electrical loads will therefore be calculated.   
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+
+\subsection{Top Drive Motor}
+The top drive motor is dimensioned from the pipe torque limit as the drill pipe is the weakest element in the system. The torque limit for the drill pipe was calculated using the triaxial failure criterion showed in equation (\ref{eq:triaxialfc}). The critical point was set to be at the top of the drill pipe, where the largest axial force and internal pressure are felt. 
+
+
+\begin{equation}
+\centering
+   (\sigma_\theta - \sigma_z)^2 + (\sigma_r - \sigma_\theta)^2 + (\sigma_z - \sigma_r)^2 = 2\sigma_{ys}^2
+\label{eq:triaxialfc}
+\end{equation}
+
+$\sigma_\theta$ is the tangential stress (Pa) given by equation (\ref{eq:sigmat}), $\sigma_r$ is the radial stress (Pa) given by equation (\ref{eq:sigmar}), $\theta_z$ is the axial stress (Pa) given by equation (\ref{eq:sigmaz}), $\tau$ is the shear stress (Pa) and $\sigma_{ys}$ is the yield strength of aluminum (Pa).
+
+\begin{equation}
+\centering
+   \sigma_\theta=\frac{(\frac{d_o}{2})^2+(\frac{d_i}{2})^2}{(\frac{d_o}{2})^2-(\frac{d_i}{2})^2}
+\label{eq:sigmat}
+\end{equation}
+
+\begin{equation}
+\centering
+   \sigma_r=-P_i
+\label{eq:sigmar}
+\end{equation}
+
+\begin{equation}
+\centering
+   \sigma_z=\frac{(\frac{d_i}{2})^2 P_i}{(\frac{d_o}{2})^2-(\frac{d_i}{2})^2}
+\label{eq:sigmaz}
+\end{equation}
+
+$P_i$ is the internal pressure in the pipe (Pa), $d_o$ is the outer diameter of the pipe (m) and $d_i$ is the inner diameter of the pipe (m). 
+
+The torque limit for the pipe was then calculated using equation (\ref{eq:tcrit}).
+
+\begin{equation}
+\centering
+   T_{crit} \approx \tau_{crit} \frac{\pi}{4} (d_o^2-d_i^2)\frac{d_o+d_i}{4}
+\label{eq:tcrit}
+\end{equation}
+
+$T_{crit}$ is the critical torque limit (Nm) and $\tau_{crit}$ is the critical shear stress (Pa).
+
+The yield strength of the aluminum pipe has been assumed to be 96.55 MPa, the outer diameter of the pipe is 9.53 mm, the inner diameter of the pipe is 7.75 mm and the internal pressure is 5.26 MPa. The critical shear stress of the pipe has been calculated to be 55.66 MPa. This gave a critical torque limit of 5.80 Nm. 
+
+Shaft power for the top drive motor is given by equation (\ref{eq:shaftpower}) \cite{bourg}.
+
+\begin{equation}
+\centering
+   P_{TD}=\omega T \cdot \frac{1}{\varepsilon}
+\label{eq:shaftpower}
+\end{equation}
+
+$P_{TD}$ is the shaft power for the top drive motor (W), $\omega$ is the angular velocity of the shaft (rad/sec) given by equation (\ref{eq:omega}), T is torque (Nm) and $\varepsilon$ is the efficiency factor (dimensionless).
+
+\begin{equation}
+\centering
+   \omega=\frac{2\pi N}{60}
+\label{eq:omega}
+\end{equation}
+
+N is revolutions per minute (RPM). 
+
+Since this system is small scale compared to a real drilling rig, and has a very unconventional bit size, it is hard to give a good estimate of the RPM interval limits. To give a rough estimate, a 1.125” bit would have 2000 RPM to get the same tangential speed as a 12.25” bit with an upper limit of 300 RPM. Critical RPM values for the system are to be avoided to reduce the impact of large vibrations. The analysis of critical RPM will be done in section 6.1. 
+
+Using the critical torque value of 5.80 Nm, an RPM of 2000 and an efficiency factor of 0.9, the power consumption of the top drive motor was calculated to be 1350 W. This is not a fixed value and RPM will be adjusted according to the critical values for the system.
+
+\subsection{Hoisting Motor}
+The hoisting motor power was calculated in the same way as for the top drive motor, using equation (\ref{eq:shaftpower}). Torque was estimated using equation (\ref{eq:torquealu}) \cite{aluflex}.
+
+\begin{equation}
+\centering
+   T =\frac{F \cdot l}{2\pi \cdot \varepsilon_{BS}}
+\label{eq:torquealu}
+\end{equation}
+
+F is the force acting on the ball screw (N) and l is the lead of the ball screw (m). The total force acting on the ball screw, from weight of drill string, stiffening force, top drive motor and carriage, was estimated to be 491 N. To ensure precision while drilling, the lead of the ball screw was chosen to be 5 mm, which is the lowest lead value available from Aluflex. The efficiency factor for the ball screw was set as 0.90 \cite{aluflex}. Torque was then estimated to be 0.43 Nm.  
+
+For calibration purposes, the carriage should be able to move from top to bottom of the guide system within 10 seconds, which results in an RPM of 1440. The efficiency factor for the hoisting motor was set as 0.9, and the motor power required was calculated to be 73 W.  
+
+\subsection{Fluid Pump}
+The fluid pump will supply power to the circulation system to ensure proper hole cleaning and to provide geometric stiffness by increasing the internal pressure of the drill string.
+
+The power of the pump was calculated using equation (\ref{eq:pumppower}).
+
+\begin{equation}
+\centering
+   P_{Pump}=pQ \cdot \frac{1}{\varepsilon}
+\label{eq:pumppower}
+\end{equation}
+
+$P_{pump}$ is the power of the pump (W), $p$ is the pump pressure (Pa) and Q is the flow rate (m$^3$/s).
+
+The factors limiting the power of the pump are the maximum pump pressure and minimum pump flow rate. The maximum pressure was estimated from the burst pressure of the pipe, as calculated in section \ref{sssec:burst}, and was found to be 5.43 MPa. The flow rate was estimated from hole cleaning requirements, as calculated in section \ref{sssec:pressureloss}, and was found to be 0.00014 m$^3$/s. The pump efficiency was set to be 0.9, which is a typical value for piston pumps \cite{pumps}. The power of the pump was then calculated to be 775 W.
+
+\subsection{Computer}
+The computer used for the control system will use approximately 70 W, which is a maximum value for a general laptop.  
+
+\subsection{Summary}
+The power distribution for the motor, pump and computer in the system is presented in table (\ref{tab:sumpower}). The total power consumption is 2.27 kW, which is only 12\% of the power consumption limit at 18.64 kW. 
+
+\begin{table} [H]
+    \centering
+    \caption{System power distribution}
+    \begin{tabular}{p{3cm} p{3cm}}
+        Component & Power [kW] \\ \hline \hline
+        Top Drive Motor  & 1350 \\ \hline
+        Hoisting Motor & 73 \\ \hline
+        Fluid Pump & 775 \\ \hline
+        Computer & 70 \\
+    \end{tabular}
+    \label{tab:sumpower}
+\end{table}

@@ -1,0 +1,27 @@
+The oil and gas industry seeks new solutions to lower costs and improve safety and efficiency. In the last decades, the interest in drilling automation has grown as oil and gas prospects have become more complex and more challenging. An increased level of automation may result in a more accurate and rapid response to drilling anomalies, as well as a decrease in the need of human intervention during drilling operations.
+
+As a response to this, SPE formed the sub-committee DSATS (Drilling System Automation Technical Section) to accelerate the uptake of automation in the drilling industry. During the last 2 years, DSATS has organized the international student competition Drillbotics \texttrademark. 
+
+The aim of the competition has been to “design a drilling rig and related equipment to autonomously drill a vertical well as quickly as possible while maintaining borehole quality and integrity of the drilling rig and drill string” (ref*). The only manual intervention allowed is to press a button to start the drilling operation. This design report is NTNU’s contribution to the competition.
+
+Several rules are presented in the guidelines and they form the basis and limitations of the design. The most important limitations are related to the pipe, drill string design, mobility of the rig, and, downhole and surface measurements of drilling parameters. These limitations have been taken into consideration when designing the drilling rig. In addition to this, the evaluation committee has listed a set of different grading criteria. This has included safety, mobility of rig, design considerations and lessons learned, mechanical design and functionality/versatility, simulation/model/algorithm and control scheme. 
+
+Another important factor is the rig and material cost. This has been limited to US\$ 10,000 and must be covered through funding. Equipment can be provided by the university or by companies that are interested in supporting the project. The cost of this is not included in the budget. The source of funding for this project is mainly the institute, but maybe also industry. 
+
+The main mechanical design features of the rig have been developed based on the limitations of the system. Through analysis and previous experiences, it has been clear that the weakness of the drill pipe would present the largest issue. An expected result of this is large and destructive pipe vibrations. 
+
+The rig has been designed to minimize the magnitude of these vibrations and thus reduce their impact on the equipment. The proposed solution is to add an adjustable plate that will be positioned over the formation block and provide a point of stabilization to the drill pipe during operation. An additional point of support will be provided through a fixed plate positioned under the top drive, simulating a drill deck.
+
+Vibrations will also be taken into consideration through the design of the drill string. To minimize the amplitude of the vibrations the total length of the drill string will be kept as short as possible and the bottom hole assembly will include a welded spiral blade stabilizer.
+ 
+Another issue related to the weakness of the drill pipe is that it limits the amount of weight that can be applied at the top of the string. If too much weight is applied, the pipe enters a state of compression and if it reaches a critical load, it can buckle and fail. The weight added at the top is directly related to the force exerted by the formation on the bit, commonly referred to as weight on bit (WOB), which means that insufficient weight at the top reduces the ability to drill efficiently through the formation. As one of the main goals of the competition is to drill as fast as possible, it is crucial to optimize the WOB while staying within the critical load criteria.
+
+To optimize the WOB, it has been proposed to add a nozzle in the pipe to increase its internal pressure. This will in turn lead to an increase in tension which counteracts the WOB. The increase in internal pressure is limited by the burst pressure of the pipe.
+
+In addition to a good mechanical rig design, it has been of great importance to develop a control network and algorithms that can ensure that the automated drilling operation is safe and efficient.
+
+One of the objectives has been to create an algorithm that continuously tries to determine the optimal control parameters. The control parameters are in this case the amount of weight applied on the string (WOB), the rotational speed of the string (RPM) and the flow rate of the drilling mud. Adjusting these parameters causes a change in other drilling parameters that will be monitored by downhole and surface sensors.
+
+The optimal combination of control parameters will be estimated by implementing an optimization function. The goal of the function is to increase the speed of drilling, but more importantly, respond to drilling dysfunctions and ensure that all drilling parameters are within a pre-defined safe range to ensure a vertical borehole and maintain the integrity of the drilling rig and the drill string. 
+
+The optimization function will seek to minimize the amplitude of the vibrations and maximize the speed of drilling by adjusting control parameters and monitoring the response of key drilling parameters. The response time of the sensors, data aggregation system and algorithm must be fast in order to ensure real-time data handling. Calibrating the sensors will also be an important factor in maintaining a high quality control system. 
